@@ -110,7 +110,7 @@ CREATE TABLE top_cast(
   role TEXT
 );
 
-INSERT INTO movies (
+INSERT INTO movies(
 title,
 year,
 mpaa_rating,
@@ -121,4 +121,14 @@ VALUES (
   "2005",
   "PG-13",
   "Christopher Nolan"
+);
+INSERT INTO top_cast(
+title,
+name,
+role
+)
+VALUES (
+  "Batman Begins",
+  "Christian Bale",
+  "Bruce Wayne"
 );
