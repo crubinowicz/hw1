@@ -90,234 +90,280 @@
 .mode column
 .headers off
 .width 20 20 20 
-DROP TABLE IF EXISTS movie;
-DROP TABLE IF EXISTS actor;
 
-
-CREATE TABLE movie (
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   title TEXT,
-   year_released TEXT,
-   MPAA_rating TEXT,
-   director TEXT
+-- CREATE TABLES
+DROP TABLE IF EXISTS Movie;
+DROP TABLE IF EXISTS Top_Cast;
+DROP TABLE IF EXISTS Director;
+ 
+CREATE TABLE Movie (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  movie_title TEXT,
+  year TEXT,
+  rating TEXT,
+  director_id TEXT
 );
  
-CREATE TABLE actor (
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   name TEXT,
-   character TEXT,
-   movie TEXT
+CREATE TABLE Top_Cast (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  actor_name TEXT,
+  role_name TEXT,
+  movie_id INTEGER
 );
  
-INSERT INTO movie (
-   title,
-   year_released,
-   MPAA_rating,
-   director
-)
-VALUES (
-   'Batman Begins',
-   '2005',
-   'PG-13',
-   'Christopher Nolan'
+CREATE TABLE Director (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  director_name TEXT,
+  movie_id INTEGER
 );
  
 INSERT INTO movie (
-   title,
-   year_released,
-   MPAA_rating,
-   director
+  movie_title,
+  year,
+  rating,
+  director_id
 )
 VALUES (
-   'The Dark Knight',
-   '2008',
-   'PG-13',
-   'Christopher Nolan'
+  'Batman Begins',
+  '2005',
+  'PG-13',
+  1
+  
 );
  
 INSERT INTO movie (
-   title,
-   year_released,
-   MPAA_rating,
-   director
+  movie_title,
+  year,
+  rating,
+  director_id
 )
 VALUES (
-   'The Dark Knight Rises',
-   '2012',
-   'PG-13',
-   'Christopher Nolan'
+  'The Dark Knight',
+  '2008',
+  'PG-13',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO movie (
+  movie_title,
+  year,
+  rating,
+  director_id
 )
 VALUES (
-   'Christian Bale',
-   'Bruce Wayne',
-   'Batman Begins'
-);
-INSERT INTO actor (
-   name,
-   character,
-   movie
-)
-VALUES (
-   'Christian Bale',
-   'Bruce Wayne',
-   'The Dark Knight'
+  'The Dark Knight Rises',
+  '2012',
+  'PG-13',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Christian Bale',
-   'Bruce Wayne',
-   'The Dark Knight Rises'
+  'Christian Bale',
+  'Bruce Wayne',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Michael Caine',
-   'Alfred',
-   'Batman Begins'
-);
-INSERT INTO actor (
-   name,
-   character,
-   movie
-)
-VALUES (
-   'Michael Caine',
-   'Alfred',
-   'The Dark Knight'
+  'Christian Bale',
+  'Bruce Wayne',
+  2
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Liam Neeson',
-   'Ra`s Al Ghul',
-   'Batman Begins'
+  'Christian Bale',
+  'Bruce Wayne',
+  3
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Katie Holmes',
-   'Rachel Dawes',
-   'Batman Begins'
+  'Michael Caine',
+  'Alfred',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Gary Oldman',
-   'Commissioner Gordon',
-   'Batman Begins'
+  'Michael Caine',
+  'Alfred',
+  2
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Gary Oldman',
-   'Commissioner Gordon',
-   'The Dark Knight Rises'
+  'Liam Neeson',
+  'Ra`s Al Ghul',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Heath Ledger',
-   'Joker',
-   'The Dark Knight'
+  'Katie Holmes',
+  'Rachel Dawes',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Aaron Eckhart',
-   'Harvey Dent',
-   'The Dark Knight'
+  'Gary Oldman',
+  'Commissioner Gordon',
+  1
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Maggie Gyllenhaal',
-   'Rachel Dawes',
-   'The Dark Knight'
+  'Gary Oldman',
+  'Commissioner Gordon',
+  3
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Tom Hardy',
-   'Bane',
-   'The Dark Knight Rises'
+  'Heath Ledger',
+  'Joker',
+  2
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Joseph Gordon-Levitt',
-   'John Blake',
-   'The Dark Knight Rises'
+  'Aaron Eckhart',
+  'Harvey Dent',
+  2
 );
  
-INSERT INTO actor (
-   name,
-   character,
-   movie
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
 )
 VALUES (
-   'Anne Hathaway',
-   'Selina Kyle',
-   'The Dark Knight Rises'
+  'Maggie Gyllenhaal',
+  'Rachel Dawes',
+  2
 );
+ 
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
+)
+VALUES (
+  'Tom Hardy',
+  'Bane',
+  3
+);
+ 
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
+)
+VALUES (
+  'Joseph Gordon-Levitt',
+  'John Blake',
+  3
+);
+ 
+INSERT INTO Top_Cast (
+  actor_name,
+  role_name,
+  movie_id
+)
+VALUES (
+  'Anne Hathaway',
+  'Selina Kyle',
+  3
+);
+ 
+INSERT INTO Director (
+  director_name,
+  movie_id
+)
+VALUES (
+  'Christopher Nolan',
+  1
+);
+ 
+INSERT INTO Director (
+  director_name,
+  movie_id
+)
+VALUES (
+  'Christopher Nolan',
+  2
+);
+ 
+INSERT INTO Director (
+  director_name,
+  movie_id
+)
+VALUES (
+  'Christopher Nolan',
+  3
+);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 .print "Movies"
 .print "======"
 .print ""
  
-SELECT title, year_released, MPAA_rating, director
-FROM movie;
+SELECT movie.movie_title, movie.year, movie.rating, movie.director_id
+FROM Movie INNER JOIN Director on Director.director_name = movie.director_id;
  
  
 .print ""
@@ -325,6 +371,4 @@ FROM movie;
 .print "========"
 .print ""
  
-SELECT movie, name, character
-FROM actor
-ORDER BY movie;
+--SELECT movie_id, actor_name, role_name FROM Top_Cast;
