@@ -93,42 +93,241 @@
 
 -- The SQL statement for the cast output
 -- TODO!
-DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS top_cast;
+DROP TABLE IF EXISTS movie;
+DROP TABLE IF EXISTS actor;
 
-CREATE TABLE movies(
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  title TEXT,
-  year INTEGER,
-  mpaa_rating TEXT,
-  director TEXT
+ 
+CREATE TABLE movie (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   title TEXT,
+   year_released TEXT,
+   MPAA_rating TEXT,
+   director TEXT
 );
-CREATE TABLE top_cast(
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  title TEXT,
-  name TEXT,
-  role TEXT
+ 
+CREATE TABLE actor (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   name TEXT,
+   character TEXT,
+   movie TEXT
 );
-
-INSERT INTO movies(
-title,
-year,
-mpaa_rating,
-director
+ 
+INSERT INTO movie (
+   title,
+   year_released,
+   MPAA_rating,
+   director
 )
 VALUES (
-  "Batman Begins",
-  "2005",
-  "PG-13",
-  "Christopher Nolan"
+   'Batman Begins',
+   '2005',
+   'PG-13',
+   'Chrisopher Nolan'
 );
-INSERT INTO top_cast(
-title,
-name,
-role
+ 
+INSERT INTO movie (
+   title,
+   year_released,
+   MPAA_rating,
+   director
 )
 VALUES (
-  "Batman Begins",
-  "Christian Bale",
-  "Bruce Wayne"
+   'The Dark Knight',
+   '2008',
+   'PG-13',
+   'Chrisopher Nolan'
 );
+ 
+INSERT INTO movie (
+   title,
+   year_released,
+   MPAA_rating,
+   director
+)
+VALUES (
+   'The Dark Knight Rises',
+   '2012',
+   'PG-13',
+   'Chrisopher Nolan'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Christian Bale',
+   'Bruce Wayne',
+   'Batman Begins'
+);
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Christian Bale',
+   'Bruce Wayne',
+   'The Dark Knight'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Christian Bale',
+   'Bruce Wayne',
+   'The Dark Knight Rises'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Michael Caine',
+   'Alfred',
+   'Batman Begins'
+);
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Michael Caine',
+   'Alfred',
+   'The Dark Knight'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Liam Neeson',
+   'Ra`s Al Ghul',
+   'Batman Begins'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Katie Holmes',
+   'Rachel Dawes',
+   'Batman Begins'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Gary Oldman',
+   'Commissioner Gordon',
+   'Batman Begins'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Gary Oldman',
+   'Commissioner Gordon',
+   'The Dark Knight Rises'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Heath Ledger',
+   'Joker',
+   'The Dark Knight'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Aaron Eckhart',
+   'Harvey Dent',
+   'The Dark Knight'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Maggie Gyllenhaal',
+   'Rachel Dawes',
+   'The Dark Knight'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Tom Hardy',
+   'Bane',
+   'The Dark Knight Rises'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Joseph Gordon-Levitt',
+   'John Blake',
+   'The Dark Knight Rises'
+);
+ 
+INSERT INTO actor (
+   name,
+   character,
+   movie
+)
+VALUES (
+   'Anne Hathaway',
+   'Selina Kyle',
+   'The Dark Knight Rises'
+);
+ 
+ 
+.print "Movies"
+.print "======"
+.print ""
+ 
+SELECT title, year_released, MPAA_rating, director
+FROM movie;
+ 
+ 
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
+ 
+SELECT movie, name, character
+FROM actor
+ORDER BY movie;
