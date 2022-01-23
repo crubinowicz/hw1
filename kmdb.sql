@@ -132,7 +132,7 @@ VALUES (
    'The Dark Knight',
    '2008',
    'PG-13',
-   'Chrisopher Nolan'
+   'Christopher Nolan'
 );
  
 INSERT INTO movie (
@@ -145,7 +145,7 @@ VALUES (
    'The Dark Knight Rises',
    '2012',
    'PG-13',
-   'Chrisopher Nolan'
+   'Christopher Nolan'
 );
  
 INSERT INTO actor (
