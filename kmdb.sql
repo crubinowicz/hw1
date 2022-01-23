@@ -63,8 +63,7 @@
 -- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 -- Turns column mode on but headers off
-.mode column
-.headers off
+
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -77,26 +76,24 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
+
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
 
 
 -- The SQL statement for the cast output
 -- TODO!
+
+.mode column
+.headers off
+.width 20 20 20 
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS actor;
 
- 
+
 CREATE TABLE movie (
    id INTEGER PRIMARY KEY AUTOINCREMENT,
    title TEXT,
