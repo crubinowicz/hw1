@@ -119,7 +119,7 @@ VALUES (
    'Batman Begins',
    '2005',
    'PG-13',
-   'Chrisopher Nolan'
+   'Christopher Nolan'
 );
  
 INSERT INTO movie (
