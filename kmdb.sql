@@ -362,8 +362,9 @@ VALUES (
 .print "======"
 .print ""
  
-SELECT movie.movie_title, movie.year, movie.rating, movie.director_id
-FROM Movie INNER JOIN Director on Director.director_name = movie.director_id;
+SELECT movie.movie_title, movie.year, movie.rating, director.director_name
+FROM Movie INNER JOIN director on director.id = movie.director_id;
+
  
  
 .print ""
@@ -371,4 +372,6 @@ FROM Movie INNER JOIN Director on Director.director_name = movie.director_id;
 .print "========"
 .print ""
  
---SELECT movie_id, actor_name, role_name FROM Top_Cast;
+ select movie.movie_title, top_cast.actor_name, top_cast.role_name
+ from movie Inner JOIN top_cast on top_cast.movie_id = movie_id
+ order by movie.movie_title;
