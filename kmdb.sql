@@ -92,36 +92,36 @@
 .width 20 20 20 
 
 -- CREATE TABLES
-DROP TABLE IF EXISTS Movie;
+DROP TABLE IF EXISTS Movies;
 DROP TABLE IF EXISTS Top_Cast;
-DROP TABLE IF EXISTS Director;
+DROP TABLE IF EXISTS Directors;
  
-CREATE TABLE Movie (
+CREATE TABLE Movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   year TEXT,
   rating TEXT,
-  director_id TEXT
+  directors_id TEXT
 );
  
 CREATE TABLE Top_Cast (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   actor_name TEXT,
   role_name TEXT,
-  movie_id INTEGER
+  movies_id INTEGER
 );
  
-CREATE TABLE Director (
+CREATE TABLE Directors (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   director_name TEXT,
-  movie_id INTEGER
+  movies_id INTEGER
 );
  
-INSERT INTO movie (
+INSERT INTO movies (
   movie_title,
   year,
   rating,
-  director_id
+  directors_id
 )
 VALUES (
   'Batman Begins',
@@ -131,11 +131,11 @@ VALUES (
   
 );
  
-INSERT INTO movie (
+INSERT INTO movies (
   movie_title,
   year,
   rating,
-  director_id
+  directors_id
 )
 VALUES (
   'The Dark Knight',
@@ -144,11 +144,11 @@ VALUES (
   1
 );
  
-INSERT INTO movie (
+INSERT INTO movies (
   movie_title,
   year,
   rating,
-  director_id
+  directors_id
 )
 VALUES (
   'The Dark Knight Rises',
@@ -160,7 +160,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Christian Bale',
@@ -171,7 +171,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Christian Bale',
@@ -182,7 +182,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Christian Bale',
@@ -193,7 +193,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Michael Caine',
@@ -204,7 +204,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Michael Caine',
@@ -215,7 +215,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Liam Neeson',
@@ -226,7 +226,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Katie Holmes',
@@ -237,7 +237,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Gary Oldman',
@@ -248,7 +248,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Gary Oldman',
@@ -259,7 +259,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Heath Ledger',
@@ -270,7 +270,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Aaron Eckhart',
@@ -281,7 +281,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Maggie Gyllenhaal',
@@ -292,7 +292,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Tom Hardy',
@@ -303,7 +303,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Joseph Gordon-Levitt',
@@ -314,7 +314,7 @@ VALUES (
 INSERT INTO Top_Cast (
   actor_name,
   role_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Anne Hathaway',
@@ -322,27 +322,27 @@ VALUES (
   3
 );
  
-INSERT INTO Director (
+INSERT INTO Directors (
   director_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Christopher Nolan',
   1
 );
  
-INSERT INTO Director (
+INSERT INTO Directors (
   director_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Christopher Nolan',
   2
 );
  
-INSERT INTO Director (
+INSERT INTO Directors (
   director_name,
-  movie_id
+  movies_id
 )
 VALUES (
   'Christopher Nolan',
@@ -362,8 +362,8 @@ VALUES (
 .print "======"
 .print ""
  
-SELECT movie.movie_title, movie.year, movie.rating, director.director_name
-FROM Movie INNER JOIN director on director.id = movie.director_id;
+SELECT movies.movie_title, movies.year, movies.rating, directors.director_name
+FROM Movies INNER JOIN directors on directors.id = movies.directors_id;
 
  
  
@@ -372,6 +372,6 @@ FROM Movie INNER JOIN director on director.id = movie.director_id;
 .print "========"
 .print ""
  
- select movie.movie_title, top_cast.actor_name, top_cast.role_name
- from movie Inner JOIN top_cast on top_cast.movie_id = movie_id
- order by movie.movie_title;
+ select movies.movie_title, top_cast.actor_name, top_cast.role_name
+ from movies Inner JOIN top_cast on top_cast.movies_id = movies_id
+ order by movies.movie_title;
